@@ -1,0 +1,21 @@
+nav {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-color: white;
+  overflow: hidden;
+}
+.logo {
+  font-weight: bolder;
+}
+
+.page {
+  font-size: 17px;
+  font-weight: 600;
+  color: grey;
+}
+
+@media screen and (max-width: 400px) {
+  .page {
+    font-size: 14px;
+    font-weight: 600;
+  }
+}

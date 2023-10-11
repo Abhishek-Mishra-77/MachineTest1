@@ -1,0 +1,48 @@
+.tableData {
+  margin-top: 20px;
+}
+
+.card-header {
+  font-size: 20px;
+  color: grey;
+}
+
+.table tr th {
+  color: grey;
+}
+
+.table tbody tr td {
+  font-size: 14px;
+  font-weight: none;
+  color: rgb(126, 124, 124);
+}
+.table-icon {
+  font-size: small;
+}
+
+.table tbody tr {
+  height: 30px;
+}
+
+.table tbody td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.table thead th {
+  text-align: center;
+  vertical-align: middle;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.table {
+  width: 100%;
+}
+
+.sorting form select {
+  width: 100px;
+  height: 35px;
+}

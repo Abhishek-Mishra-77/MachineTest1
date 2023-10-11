@@ -1,0 +1,12 @@
+.mainData {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.component {
+  flex: 0 1 calc(50% - 10px);
+  margin: 5px;
+  box-sizing: border-box;
+}

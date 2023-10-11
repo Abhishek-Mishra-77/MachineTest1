@@ -1,0 +1,76 @@
+.create-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.left-card {
+  width: 17rem;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.left-card img {
+  width: 14rem;
+  height: 17rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-card {
+  width: 17rem;
+  margin-left: 20px;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.right-card img {
+  width: 14rem;
+  height: 17rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nextBtn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nextBtn button {
+  margin-right: 20px;
+  width: 100px;
+  background-color: #73bcc2;
+  font-weight: 600;
+  color: grey;
+  margin-bottom: 10px;
+}
+
+.nextBtn button:hover {
+  background-color: #73bcc2;
+}
+
+.card small {
+  color: grey;
+}
+
+.card h5 {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 990px) {
+  .nextBtn button {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .right-card {
+    margin-top: 10px;
+    margin-right: 20px;
+  }
+}

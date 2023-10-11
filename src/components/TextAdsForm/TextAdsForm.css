@@ -1,0 +1,39 @@
+label {
+  color: grey;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.textAds {
+  height: 90vh;
+}
+.submitBtn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.submitBtn a {
+  margin-right: 20px;
+  width: 100px;
+  background-color: #4db8ff;
+  font-weight: 600;
+  color: white;
+  margin-top: 3rem;
+}
+
+.submitBtn button {
+  margin-right: 20px;
+  width: 100px;
+  background-color: #4db8ff;
+  font-weight: 600;
+  color: white;
+  margin-top: 3rem;
+}
+
+.submitBtn a:hover {
+  background-color: #4db8ff;
+}
+
+.submitBtn button:hover {
+  background-color: #4db8ff;
+}

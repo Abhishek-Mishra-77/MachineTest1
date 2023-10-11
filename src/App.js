@@ -1,24 +1,28 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
+import NavBar from "./components/NavBar/NavBar";
+import DashBoard from "./components/DashBoard/DashBoard";
+import CreateAds from "./components/CreateAds/CreateAds";
+import TextAdsForm from "./components/TextAdsForm/TextAdsForm";
+import MediaAdsForm from "./components/MediaAdsForm/MediaAdsForm";
+import SubmitForm from "./components/SubmitForm/SubmitForm";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="container main-container">
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<DashBoard />} />
+          <Route path="/ads" element={<CreateAds />} />
+          <Route path="/textAds" element={<TextAdsForm />} />
+          <Route path="/mediaAds" element={<MediaAdsForm />} />
+          <Route path="/submit" element={<SubmitForm />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
