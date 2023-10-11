@@ -19,15 +19,6 @@ const StyledText = styled('text')(({ theme }) => ({
 
 const ChartBar = ({ ChartDataSelected }) => {
 
-
-    // const selectedData = ChartDataSelected ? ChartDataSelected : [];
-
-
-    // const chartData = selectedData.map((item) => ({
-    //     value: item.value,
-    //     label: item.label,
-    // }));
-
     const { labels, datasets } = ChartDataSelected ? ChartDataSelected : {};
     const data1 = datasets && datasets[0] && datasets[0].data[0];
     const data2 = datasets && datasets[0] && datasets[0].data[1];
