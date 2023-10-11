@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './ChartData.css';
 import UnfoldMoreIcon from '@mui/icons-material/UnfoldMore';
 import DataSaverOffIcon from '@mui/icons-material/DataSaverOff';
@@ -13,8 +13,8 @@ const ChartData = () => {
 
 
     const [toggle, setToggle] = useState(false);
-    const [selectedMetric, setSelectedMetric] = useState('');
-    const [selectdData, setSelectDataMatrix] = useState({});
+    const [selectedMetric, setSelectedMetric] = useState('Clicks');
+    const [ChartDataSelected, setChartDataSelected] = useState(null);
 
 
     const icon = {
@@ -25,37 +25,81 @@ const ChartData = () => {
         {
             id: 'b1',
             Campaigns: 'Male',
-            Click: '454',
-            Cost: '4,74',
-            Conversions: '115',
+            Clicks: '70',
+            Cost: '48',
+            Conversions: '40',
             Revenue: '16,458'
         },
         {
             id: 'b2',
             Campaigns: 'Female',
-            Click: '712',
-            Cost: '4,272',
-            Conversions: '8',
-            Revenue: '16,458'
+            Clicks: '20',
+            Cost: '22',
+            Conversions: '52',
+            Revenue: '16458'
         },
         {
             id: 'b3',
             Campaigns: 'Unknown',
-            Click: '39,45',
-            Cost: '4,272',
+            Clicks: '10',
+            Cost: '30',
             Conversions: '8',
-            Revenue: '16,458'
+            Revenue: '16458'
         },
     ]
 
-    const metrics = ['clicks', 'conversions', 'cost'];
-
-
+    const metrics = ['Clicks', 'Conversions', 'Cost'];
 
     const handler = () => {
         setToggle((toggle) => !toggle)
     }
 
+
+    const selecteHandler = (event) => {
+        setSelectedMetric(event.target.value);
+    }
+
+
+    const generateChartData = (selectedMetric) => {
+        const labels = chartData.map((data) => data.Campaigns);
+        const dataValues = chartData.map((data) => data[selectedMetric]);
+        if (selectedMetric === 'Clicks') {
+            return {
+                labels: labels,
+                datasets: [
+                    {
+                        data: dataValues,
+                    },
+                ],
+            };
+        }
+        else if (selectedMetric === 'Conversions') {
+            return {
+                labels: labels,
+                datasets: [
+                    {
+                        data: dataValues,
+                    },
+                ],
+            };
+        }
+        else if (selectedMetric === 'Cost') {
+            return {
+                labels: labels,
+                datasets: [
+                    {
+                        data: dataValues,
+                    },
+                ],
+            };
+        }
+    }
+
+
+    useEffect(() => {
+        const newChartData = generateChartData(selectedMetric);
+        setChartDataSelected(newChartData);
+    }, [selectedMetric]);
 
 
     return (
@@ -65,8 +109,7 @@ const ChartData = () => {
                     <div>Ad Insights</div>
                     <div className='d-flex'>
                         <form>
-                            <select value={selectedMetric} >
-                                <option value='#'>click</option>
+                            <select value={selectedMetric} onChange={selecteHandler}>
                                 {metrics.map((metric) => (
                                     <option key={metric} value={metric}>
                                         {metric}
@@ -93,7 +136,7 @@ const ChartData = () => {
                             {chartData.map((data) => (
                                 <tr key={data.id}>
                                     <td>{data.Campaigns}</td>
-                                    <td>{data.Click}</td>
+                                    <td>{data.Clicks}</td>
                                     <td>{data.Cost}</td>
                                     <td>{data.Conversions}</td>
                                     <td>{data.Revenue}</td>
@@ -108,7 +151,7 @@ const ChartData = () => {
                             </tr>
                         </tbody>
                     </table> :
-                        <ChartBar />}
+                        <ChartBar ChartDataSelected={ChartDataSelected} />}
                 </div>
                 <div className='toggle-main'>
                     <div onClick={handler} className='toggle'>
